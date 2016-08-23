@@ -22,7 +22,7 @@ public class Device implements Serializable{
 	private int versionCode;
 	//版本描述
 	private String description;
-	
+	//////////////////////////////////////////////////////
 	public int getDevice() {
 		return device;
 	}
