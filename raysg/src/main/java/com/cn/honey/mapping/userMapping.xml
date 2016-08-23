@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 
-<mapper namespace="com.cn.honey.Dao.userDao">
+<mapper namespace="com.cn.honey.Dao.UserDao">
 	<resultMap type="com.cn.honey.model.User" id="userMap">
 		<id column="user_id" property="userId"/>
 		<result column="photo" property="photo"/>

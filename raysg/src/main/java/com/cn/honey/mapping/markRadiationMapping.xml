@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.cn.honey.Dao.markRadiationDao">
+<mapper namespace="com.cn.honey.Dao.MarkRadiationDao">
 	<resultMap type="com.cn.honey.model.MarkRadiation" id="MarkRadiationMap">
 		<id column="markRadiation_id" property="markRadiationId" />
 		<result column="markRadiation_pvg" property="markRadiationPvg" />
