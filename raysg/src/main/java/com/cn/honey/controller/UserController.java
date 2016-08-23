@@ -28,7 +28,7 @@ public class UserController{
     if (result == 1) {
       return "录入成功111111111111111";
     }
-    return "录入失败";
+    return "录入失败1111111111111111";
   }
   @ResponseBody
   @RequestMapping({"updateUser"})
