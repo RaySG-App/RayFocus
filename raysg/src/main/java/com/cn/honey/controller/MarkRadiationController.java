@@ -24,7 +24,7 @@ public class MarkRadiationController
   {
     int result = this.markRadiationService.insert(markRadiation);
     if (result == 1) {
-      return "录入成功";
+      return "录入成功111111111111";
     }
     return "录入失败";
   }
