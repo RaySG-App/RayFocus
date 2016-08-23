@@ -22,9 +22,9 @@ public class DeviceController{
   {
     int result = this.deviceService.insertDevice(device);
     if (result == 1) {
-      return "success1";
+      return "success";
     }
-    return "录入失败";
+    return "default";
   }
   @ResponseBody
   @RequestMapping({"findDevice"})
