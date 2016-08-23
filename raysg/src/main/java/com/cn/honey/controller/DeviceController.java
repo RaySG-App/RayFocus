@@ -24,7 +24,7 @@ public class DeviceController{
     if (result == 1) {
       return "success11";
     }
-    return "default";
+    return "default111";
   }
   @ResponseBody
   @RequestMapping({"findDevice"})
