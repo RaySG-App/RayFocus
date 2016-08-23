@@ -22,7 +22,7 @@ public class DeviceController{
   {
     int result = this.deviceService.insertDevice(device);
     if (result == 1) {
-      return "success";
+      return "success1";
     }
     return "录入失败";
   }
