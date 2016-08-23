@@ -26,9 +26,9 @@ public class UserController{
   {
     int result = this.userService.insertUser(user);
     if (result == 1) {
-      return "录入成功111111111111111222222222222222";
+      return "录入成功1111111111111112222222222222224444444444444444444";
     }
-    return "录入失败11111111111111112222222222222222";
+    return "录入失败11111111111111112222222222222222444444444444444";
   }
   @ResponseBody
   @RequestMapping({"updateUser"})
