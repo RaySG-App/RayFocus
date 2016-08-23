@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.cn.honey.Dao.radiationDao">
+	<resultMap type="com.cn.honey.model.Radiation" id="radiationMap">
+		<id column="radiation_id" property="radiationId"/>
+		<result column="radiation_pvg" property="radiationPvg"/>
+		<result column="radiation_acount" property="radiationAcount"/>
+		<result column="longitude" property="longitude"/>
+		<result column="latitude" property="latitude"/>
+		<result column="country" property="country"/>
+		<result column="province" property="province"/>
+		<result column="city" property="city"/>
+		<result column="location" property="location"/>
+		<result column="user_id" property="userId"/>
+		<result column="create_time" property="createTime"/>
+		<result column="device_id" property="deviceId"/>		
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.cn.honey.model.Radiation">
+		insert into tbl_radiation (radiaton_pvg,radiation_acount,longitude,latitude,country,province,city,location,
+		user_id,create_time,device_id) values (#{radiationPvg},#{radiationAcount},#{longitude},#{latitude},
+		#{country},#{province},#{city},#{location},#{userId},#{createTime},#{deviceId})
+	</insert>
+	
+	<select id="find" parameterType="com.cn.honey.model.Radiation">
+		select * from tbl_radiation where radiation_id = #{radiationId}
+	</select>
+</mapper>

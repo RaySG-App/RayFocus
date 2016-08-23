@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.cn.honey.Dao.userDao">
+	<resultMap type="com.cn.honey.model.User" id="userMap">
+		<id column="user_id" property="userId"/>
+		<result column="photo" property="photo"/>
+		<result column="name" property="name"/>
+		<result column="phone" property="phone"/>
+		<result column="password" property="password"/>
+		<result column="birthday" property="birthday"/>
+		<result column="gender" property="gender"/>
+		<result column="location" property="location"/>
+		<result column="user_model" property="userModel"/>
+		<result column="threshold" property="threshold"/>
+		<result column="safe" property="safe"/>
+		<result column="device_id" property="deviceId"/>
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.cn.honey.model.User">
+		insert into tbl_user (photo,name,phone,password,birthday,gender,location,user_model,threshold,safe,device_id)
+		values (#{photo},#{name},#{phone},#{password},#{birthday},#{gender},#{location},#{userModel},#{threshold},
+		#{safe},#{deviceId})
+	</insert>
+	
+	<select id="finds" resultMap="userMap">
+		select *  from tbl_user where user_id=#{userId} 
+	</select>
+	
+	<select id="find" parameterType="com.cn.honey.model.User">
+		select * from tbl_user 
+		<where>
+			<if test="userId !=null and userId !=''">
+				and user_id = #{userId}
+			</if>
+			<if test="photo !=null and photo !=''">
+				and photo = #{photo}
+			</if>
+			<if test="password !=null and password !=''">
+				and password = #ï½passwordï½
+			</if>
+			<if test="name !=null and name !=''">
+				and name = #{name}
+			</if>
+			<if test="phone !=null and phone !=''">
+				and phone = #{phone}
+			</if>
+			<if test="birthday !=null and birthday !=''">
+				and birthday = #{birthday}
+			</if>
+			<if test="gender !=null and gender !=''">
+				and gender = #{gender}
+			</if>
+			<if test="location !=null and location !=''">
+				and location = #{location}
+			</if>
+			<if test="userModel !=null and userModel !=''">
+				and user_model = #ï½userModelï½
+			</if>
+			<if test="threshold !=null and threshold !=''">
+				and threshold = #{threshold}
+			</if>
+			<if test="safe !=null and safe !=''">
+				and safe = #{safe}
+			</if>
+			<if test="deviceId !=null and deviceId !=''">
+				and device_id = #{deviceId}
+			</if>
+		</where>
+	</select>
+	
+	<update id="update" parameterType="com.cn.honey.model.User"> 
+		update tbl_user 
+		<set>
+			<if test="photo !=null">
+				photo = #{photo},
+			</if>
+			<if test="password !=null">
+				 password = #ï½passwordï½,
+			</if>
+			<if test="name !=null ">
+				 name = #{name},
+			</if>
+			<if test="phone !=null">
+				 phone = #{phone},
+			</if>
+			<if test="birthday !=null">
+				 birthday = #{birthday},
+			</if>
+			<if test="gender !=null">
+				 gender = #{gender},
+			</if>
+			<if test="location !=null">
+				 location = #{location},
+			</if>
+			<if test="userModel !=null">
+				 user_model = #ï½userModelï½,
+			</if>
+			<if test="threshold !=null">
+				 threshold = #{threshold},
+			</if>
+			<if test="safe !=null">
+				 safe = #{safe},
+			</if>
+			<if test="deviceId !=null">
+				 device_id = #{deviceId}
+			</if>
+		</set>
+	</update>
+	
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from tbl_user where user_id = #{userId}
+	</delete>
+</mapper>

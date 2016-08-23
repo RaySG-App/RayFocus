@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cn.honey.Dao.markRadiationDao">
+	<resultMap type="com.cn.honey.model.MarkRadiation" id="MarkRadiationMap">
+		<id column="markRadiation_id" property="markRadiationId" />
+		<result column="markRadiation_pvg" property="markRadiationPvg" />
+		<result column="markRadiation_acount" property="markRadiationAcount" />
+		<result column="longitude" property="longitude" />
+		<result column="latitude" property="latitude" />
+		<result column="country" property="country" />
+		<result column="province" property="province" />
+		<result column="city" property="city" />
+		<result column="location" property="location" />
+		<result column="user_id" property="userId" />
+		<result column="create_time" property="createTime" />
+		<result column="device_id" property="deviceId" />
+		<result column="is_delete" property="isDelete" />
+		<result column="last_mid" property="lastMid" />
+		<result column="mark_num" property="markNum" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.cn.honey.model.MarkRadiation">
+		insert into tbl_mark_radiation
+		(markRadiaton_pvg,markRadiation_acount,longitude,latitude,country,province,city,location,
+		user_id,create_time,device_id,is_delete,last_mid,mark_num) values
+		(#{markRadiationPvg},#{markRadiationAcount},#{longitude},#{latitude},
+		#{country},#{province},#{city},#{location},#{userId},#{createTime},#{deviceId},#{isDelete},#{lastMid},#{markNum})
+	</insert>
+
+	<select id="select" parameterType="com.cn.honey.model.MarkRadiation">
+		select * from
+		tbl_mark_radiation where markRadiation_id = #{markRadiationId}
+	</select>
+
+	<delete id="delete" parameterType="com.cn.honey.model.MarkRadiation">
+		update tbl_mark_radiation set
+		is_delete = 1 where markRadiation_id = #{markRadiationId}
+	</delete>
+
+	<select id="selectByUserId" parameterType="com.cn.honey.model.MarkRadiation"
+		resultMap="MarkRadiationMap">
+		select * from tbl_mark_radiation where user_id = #{userId} 
+		<!--  
+		<where>
+			<if test="markRadiationId !=null and markRadiationId !=''">
+				and markRadiation_id = #{markRadiationId}
+			</if>
+			<if test="markRadiationPvg !=null and markRadiationPvg !=''">
+				and markRadiation_pvg = #{markRadiationPvg}
+			</if>
+			<if test="markRadiationAcount !=null markRadiationAcount !=''">
+				and markRadiation_acount = #{markRadiationAcount}
+			</if>
+			<if test="longitude !=null and longitude !=''">
+				and longitude = #{longitude}
+			</if>
+			<if test="latitude !=null and latitude !=''">
+				and latitude = #{latitude}
+			</if>
+			<if test="country !=null and country !=''">
+				and country = #{country}
+			</if>
+			<if test="province !=null and province !=''">
+				and province = #{province}
+			</if>
+			<if test="city !=null and city !=''">
+				and city = #{city}
+			</if>
+		</where>	
+		-->
+	</select>
+</mapper>
