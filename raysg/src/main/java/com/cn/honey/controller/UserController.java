@@ -26,7 +26,7 @@ public class UserController{
   {
     int result = this.userService.insertUser(user);
     if (result == 1) {
-      return "录入成功111111111111111111111111";
+      return "录入成功1111";
     }
     return "录入失败";
   }
