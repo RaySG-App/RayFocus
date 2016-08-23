@@ -26,7 +26,7 @@ public class MarkRadiationController
     if (result == 1) {
       return "录入成功111111111111";
     }
-    return "录入失败";
+    return "录入失败22222222222";
   }
   @ResponseBody
   @RequestMapping({"findMarkRadiation"})
