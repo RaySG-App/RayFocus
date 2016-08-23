@@ -28,7 +28,7 @@ public class UserController{
     if (result == 1) {
       return "录入成功  你是不是猪";
     }
-    return "录入失败";
+    return "default";
   }
   @ResponseBody
   @RequestMapping({"updateUser"})
